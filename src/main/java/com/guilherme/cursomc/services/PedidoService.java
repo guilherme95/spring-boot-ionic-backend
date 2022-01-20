@@ -17,8 +17,6 @@ import com.guilherme.cursomc.repositories.PagamentoRepository;
 import com.guilherme.cursomc.repositories.PedidoRepository;
 import com.guilherme.cursomc.services.exceptions.ObjectNotFoundException;
 
-import ch.qos.logback.core.net.server.Client;
-
 @Service
 public class PedidoService {
 
@@ -70,7 +68,7 @@ public class PedidoService {
 			ip.setPedido(obj);
 		}
 		itemPedidoRepository.saveAll(obj.getItens());
-		emailService.sendOrderCOnfirmationEmail(obj);
+		emailService.sendOrderConfirmationHtmlEmail(obj);
 		return obj;
 	}
 }
