@@ -1,11 +1,10 @@
 package com.guilherme.cursomc.domain;
 
-import java.io.Serializable;
-import java.util.Objects;
-
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import java.io.Serializable;
+import java.util.Objects;
 
 @Embeddable
 public class ItemPedidoPK implements Serializable{

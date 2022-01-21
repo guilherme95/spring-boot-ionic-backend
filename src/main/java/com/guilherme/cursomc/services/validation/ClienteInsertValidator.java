@@ -1,19 +1,17 @@
 package com.guilherme.cursomc.services.validation;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.guilherme.cursomc.domain.Cliente;
 import com.guilherme.cursomc.domain.enums.TipoCliente;
 import com.guilherme.cursomc.dto.ClienteNewDTO;
 import com.guilherme.cursomc.repositories.ClienteRepository;
 import com.guilherme.cursomc.resources.exception.FieldMessage;
 import com.guilherme.cursomc.services.validation.utils.BR;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClienteInsertValidator implements ConstraintValidator<ClienteInsert, ClienteNewDTO> {
 	

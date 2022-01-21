@@ -1,13 +1,11 @@
 package com.guilherme.cursomc.dto;
 
-import java.io.Serializable;
+import com.guilherme.cursomc.services.validation.ClienteInsert;
+import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-
-import org.hibernate.validator.constraints.Length;
-
-import com.guilherme.cursomc.services.validation.ClienteInsert;
+import java.io.Serializable;
 
 @ClienteInsert
 public class ClienteNewDTO implements Serializable{

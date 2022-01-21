@@ -1,8 +1,8 @@
 package com.guilherme.cursomc.dto;
 
-import java.io.Serializable;
-
 import com.guilherme.cursomc.domain.Produto;
+
+import java.io.Serializable;
 
 public class ProdutoDTO implements Serializable {
 	private static final long serialVersionUID = 1L;

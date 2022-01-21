@@ -1,34 +1,15 @@
 package com.guilherme.cursomc.services;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-
+import com.guilherme.cursomc.domain.*;
+import com.guilherme.cursomc.domain.enums.EstadoPagamento;
+import com.guilherme.cursomc.domain.enums.TipoCliente;
+import com.guilherme.cursomc.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.guilherme.cursomc.domain.Categoria;
-import com.guilherme.cursomc.domain.Cidade;
-import com.guilherme.cursomc.domain.Cliente;
-import com.guilherme.cursomc.domain.Endereco;
-import com.guilherme.cursomc.domain.Estado;
-import com.guilherme.cursomc.domain.ItemPedido;
-import com.guilherme.cursomc.domain.Pagamento;
-import com.guilherme.cursomc.domain.PagamentoComBoleto;
-import com.guilherme.cursomc.domain.PagamentoComCartao;
-import com.guilherme.cursomc.domain.Pedido;
-import com.guilherme.cursomc.domain.Produto;
-import com.guilherme.cursomc.domain.enums.EstadoPagamento;
-import com.guilherme.cursomc.domain.enums.TipoCliente;
-import com.guilherme.cursomc.repositories.CategoriaRepository;
-import com.guilherme.cursomc.repositories.CidadeRepository;
-import com.guilherme.cursomc.repositories.ClienteRepository;
-import com.guilherme.cursomc.repositories.EnderecoRepository;
-import com.guilherme.cursomc.repositories.EstadoRepository;
-import com.guilherme.cursomc.repositories.ItemPedidoRepository;
-import com.guilherme.cursomc.repositories.PagamentoRepository;
-import com.guilherme.cursomc.repositories.PedidoRepository;
-import com.guilherme.cursomc.repositories.ProdutoRepository;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
 
 @Service
 public class DBService {

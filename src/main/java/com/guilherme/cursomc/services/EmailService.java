@@ -1,8 +1,7 @@
 package com.guilherme.cursomc.services;
 
-import org.springframework.mail.SimpleMailMessage;
-
 import com.guilherme.cursomc.domain.Pedido;
+import org.springframework.mail.SimpleMailMessage;
 
 import javax.mail.internet.MimeMessage;
 

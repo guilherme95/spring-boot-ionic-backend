@@ -1,7 +1,6 @@
 package com.guilherme.cursomc.services;
 
-import java.util.Date;
-
+import com.guilherme.cursomc.domain.Pedido;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
@@ -10,10 +9,9 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
-import com.guilherme.cursomc.domain.Pedido;
-
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
+import java.util.Date;
 
 public abstract class AbstractEmailService implements EmailService{
 

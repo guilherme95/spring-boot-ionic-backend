@@ -1,12 +1,10 @@
 package com.guilherme.cursomc.dto;
 
-import java.io.Serializable;
-
-import javax.validation.constraints.NotEmpty;
-
+import com.guilherme.cursomc.domain.Categoria;
 import org.hibernate.validator.constraints.Length;
 
-import com.guilherme.cursomc.domain.Categoria;
+import javax.validation.constraints.NotEmpty;
+import java.io.Serializable;
 
 public class CategoriaDTO implements Serializable{
 	private static final long serialVersionUID = 1L;

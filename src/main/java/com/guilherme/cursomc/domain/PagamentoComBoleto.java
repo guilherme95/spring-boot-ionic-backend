@@ -1,12 +1,11 @@
 package com.guilherme.cursomc.domain;
 
-import java.util.Date;
-
-import javax.persistence.Entity;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.guilherme.cursomc.domain.enums.EstadoPagamento;
+
+import javax.persistence.Entity;
+import java.util.Date;
 
 @Entity
 @JsonTypeName("pagamentoComBoleto")

@@ -1,13 +1,5 @@
 package com.guilherme.cursomc.services;
 
-import java.util.Date;
-import java.util.Optional;
-
-import javax.transaction.Transactional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.guilherme.cursomc.domain.ItemPedido;
 import com.guilherme.cursomc.domain.PagamentoComBoleto;
 import com.guilherme.cursomc.domain.Pedido;
@@ -16,6 +8,12 @@ import com.guilherme.cursomc.repositories.ItemPedidoRepository;
 import com.guilherme.cursomc.repositories.PagamentoRepository;
 import com.guilherme.cursomc.repositories.PedidoRepository;
 import com.guilherme.cursomc.services.exceptions.ObjectNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
+import java.util.Date;
+import java.util.Optional;
 
 @Service
 public class PedidoService {

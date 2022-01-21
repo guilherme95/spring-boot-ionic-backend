@@ -1,9 +1,8 @@
 package com.guilherme.cursomc.repositories;
 
+import com.guilherme.cursomc.domain.Pedido;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import com.guilherme.cursomc.domain.Pedido;
 
 @Repository
 public interface PedidoRepository extends JpaRepository<Pedido, Integer>{
