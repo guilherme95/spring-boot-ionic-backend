@@ -1,5 +1,6 @@
 package com.guilherme.cursomc.services;
 
+import com.guilherme.cursomc.domain.Cliente;
 import com.guilherme.cursomc.domain.ItemPedido;
 import com.guilherme.cursomc.domain.PagamentoComBoleto;
 import com.guilherme.cursomc.domain.Pedido;
@@ -7,8 +8,13 @@ import com.guilherme.cursomc.domain.enums.EstadoPagamento;
 import com.guilherme.cursomc.repositories.ItemPedidoRepository;
 import com.guilherme.cursomc.repositories.PagamentoRepository;
 import com.guilherme.cursomc.repositories.PedidoRepository;
+import com.guilherme.cursomc.security.UserSS;
+import com.guilherme.cursomc.services.exceptions.AuthorizationException;
 import com.guilherme.cursomc.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -44,6 +50,16 @@ public class PedidoService {
 		
 		return obj.orElseThrow(()-> new ObjectNotFoundException(
 				"Objeto não encontrado! Id: " + id + ", Tipo: " + Pedido.class.getName()));
+	}
+
+	public Page<Pedido> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
+		UserSS user = UserService.authenticated();
+		if (user == null) {
+			throw new AuthorizationException("Acesso negado");
+		}
+		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Sort.Direction.valueOf(direction), orderBy);
+		Cliente cliente =  clienteService.find(user.getId());
+		return pedidoRepository.findByCliente(cliente, pageRequest);
 	}
 	
 	@Transactional
